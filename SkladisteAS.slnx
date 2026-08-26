@@ -1,0 +1,11 @@
+<Solution>
+  <Project Path="Skladiste.Infrastructure/Skladiste.Infrastructure.csproj" />
+  <Project Path="Skladiste.Kategorije/Skladiste.Kategorije.csproj" />
+  <Project Path="Skladiste.Korisnici/Skladiste.Korisnici.csproj" />
+  <Project Path="Skladiste.Nalozi/Skladiste.Nalozi.csproj" />
+  <Project Path="Skladiste.Obavestenja/Skladiste.Obavestenja.csproj" />
+  <Project Path="Skladiste.Proizvodi/Skladiste.Proizvodi.csproj" />
+  <Project Path="Skladiste.SharedKernel/Skladiste.SharedKernel.csproj" />
+  <Project Path="Skladiste.Tests/Skladiste.Tests.csproj" />
+  <Project Path="Skladiste.UI/Skladiste.UI.csproj" />
+</Solution>

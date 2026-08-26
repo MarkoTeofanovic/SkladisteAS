@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Skladiste.SharedKernel\Skladiste.SharedKernel.csproj" />
+    <ProjectReference Include="..\Skladiste.Infrastructure\Skladiste.Infrastructure.csproj" />
+    <ProjectReference Include="..\Skladiste.Proizvodi\Skladiste.Proizvodi.csproj" />
+    <ProjectReference Include="..\Skladiste.Kategorije\Skladiste.Kategorije.csproj" />
+    <ProjectReference Include="..\Skladiste.Korisnici\Skladiste.Korisnici.csproj" />
+    <ProjectReference Include="..\Skladiste.Nalozi\Skladiste.Nalozi.csproj" />
+    <ProjectReference Include="..\Skladiste.Obavestenja\Skladiste.Obavestenja.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+</Project>

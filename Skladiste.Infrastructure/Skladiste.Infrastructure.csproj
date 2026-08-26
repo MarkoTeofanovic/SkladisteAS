@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Skladiste.SharedKernel\Skladiste.SharedKernel.csproj" />
+    <ProjectReference Include="..\Skladiste.Proizvodi\Skladiste.Proizvodi.csproj" />
+    <ProjectReference Include="..\Skladiste.Kategorije\Skladiste.Kategorije.csproj" />
+    <ProjectReference Include="..\Skladiste.Korisnici\Skladiste.Korisnici.csproj" />
+    <ProjectReference Include="..\Skladiste.Nalozi\Skladiste.Nalozi.csproj" />
+    <ProjectReference Include="..\Skladiste.Obavestenja\Skladiste.Obavestenja.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
