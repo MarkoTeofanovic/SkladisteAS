@@ -8,6 +8,7 @@ using Skladiste.Korisnici;
 using Skladiste.Nalozi;
 using Skladiste.Obavestenja;
 using Skladiste.UI.ViewModels;
+using Skladiste.UI.Views;
 
 namespace Skladiste.UI;
 
@@ -20,6 +21,9 @@ public partial class App : Application
     {
         base.OnStartup(e);
 
+        // Sprecava gasenje aplikacije kad se zatvori prozor za prijavu
+        ShutdownMode = ShutdownMode.OnExplicitShutdown;
+
         var kolekcija = new ServiceCollection();
         Registruj(kolekcija);
         _servisi = kolekcija.BuildServiceProvider();
@@ -27,8 +31,17 @@ public partial class App : Application
         // Force-razresenje da ObavestenjeHandler odmah pretplati na dogadjaje
         _servisi.GetRequiredService<ObavestenjeHandler>();
 
+        // Use case: prijava korisnika
+        var prijava = _servisi.GetRequiredService<LoginWindow>();
+        if (prijava.ShowDialog() != true)
+        {
+            Shutdown();
+            return;
+        }
+
         var glavniProzor = _servisi.GetRequiredService<MainWindow>();
         MainWindow = glavniProzor;
+        ShutdownMode = ShutdownMode.OnMainWindowClose;
         glavniProzor.Show();
     }
 
@@ -48,6 +61,9 @@ public partial class App : Application
         servisi.AddSingleton<AutentifikacijaService>();
         servisi.AddSingleton<NalogService>();
         servisi.AddSingleton<ObavestenjeHandler>();
+
+        servisi.AddTransient<LoginViewModel>();
+        servisi.AddTransient<LoginWindow>();
 
         servisi.AddTransient<MainWindowViewModel>();
         servisi.AddTransient<MainWindow>();
