@@ -11,5 +11,8 @@
         <TabItem Header="Kategorije">
             <views:KategorijaListView DataContext="{Binding KategorijaListViewModel}"/>
         </TabItem>
+        <TabItem Header="Nalozi">
+            <views:NalogListView DataContext="{Binding NalogListViewModel}"/>
+        </TabItem>
     </TabControl>
 </Window>

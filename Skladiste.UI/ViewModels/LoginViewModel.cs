@@ -43,6 +43,7 @@ public class LoginViewModel : ViewModelBase
             return;
         }
 
+        SesijaServis.TrenutniKorisnik = korisnik;
         Uspesno = true;
         ZatvoriProzor?.Invoke();
     }

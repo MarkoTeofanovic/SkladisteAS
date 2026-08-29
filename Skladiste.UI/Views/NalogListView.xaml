@@ -1,0 +1,24 @@
+<UserControl x:Class="Skladiste.UI.Views.NalogListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,8">
+            <Button Content="Novi nalog" Width="100" Command="{Binding NoviNalogCommand}"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" ItemsSource="{Binding Nalozi}" AutoGenerateColumns="False"
+                  IsReadOnly="True" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Broj naloga" Binding="{Binding BrojNaloga}" Width="150"/>
+                <DataGridTextColumn Header="Datum" Binding="{Binding Datum}" Width="150"/>
+                <DataGridTextColumn Header="Ukupna vrednost" Binding="{Binding UkupnaVrednost}" Width="120"/>
+                <DataGridTextColumn Header="Broj stavki" Binding="{Binding Stavke.Count}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
