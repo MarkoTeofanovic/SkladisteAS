@@ -4,7 +4,7 @@ Desktop aplikacija (WPF, .NET 8) izgradjena kao modularni monolit, sa Clean i he
 
 ## Arhitektura
 
-Aplikacija je podeljena u module (projekte):
+Aplikacija je podeljena u module:
 
 - Skladiste.SharedKernel - zajednicki domenski elementi (dogadjaj NalogKreiranEvent, port IEventBus), bez zavisnosti od drugih modula
 - Skladiste.Proizvodi - Proizvod, IProizvodRepository, ProizvodService
