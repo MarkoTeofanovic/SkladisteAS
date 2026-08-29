@@ -16,11 +16,7 @@ Aplikacija je podeljena u module:
 - Skladiste.UI - WPF kompozicioni koren (DI, ViewModeli, Views)
 - Skladiste.Tests - jedinicni testovi nad aplikacionim slojem
 
-Svaki funkcionalni modul sadrzi svoj entitet, port (interfejs) i aplikacioni servis. Konkretne implementacije portova (adapteri) nalaze se iskljucivo u Infrastructure modulu. Zavisnosti idu u jednom smeru: UI i Infrastructure zavise od funkcionalnih modula, Nalozi zavisi od Proizvodi, a Nalozi i Obavestenja zavise od SharedKernel. Nijedan modul ne zavisi kruzno od drugog.
-
-Dependency Injection (Microsoft.Extensions.DependencyInjection) kabluje se na jednom mestu, u Skladiste.UI/App.xaml.cs.
-
-Mehanizam dogadjaja: NalogService objavljuje NalogKreiranEvent preko IEventBus-a kada se kreira novi nalog. ObavestenjeHandler (Obavestenja modul) se pretplacuje na taj dogadjaj i belezi obavestenje, bez direktne zavisnosti od Nalozi modula.
+Svaki funkcionalni modul sadrzi svoj entitet, port (interfejs) i aplikacioni servis. Konkretne implementacije portova (adapteri) nalaze se iskljucivo u Infrastructure modulu. Zavisnosti idu u jednom smeru: UI i Infrastructure zavise od funkcionalnih modula, Nalozi zavisi od Proizvodi, a Nalozi i Obavestenja zavise od SharedKernel. Nijedan modul ne zavisi kruzno od drugog. Dependency Injection (Microsoft.Extensions.DependencyInjection) kabluje se na jednom mestu, u Skladiste.UI/App.xaml.cs. Mehanizam dogadjaja: NalogService objavljuje NalogKreiranEvent preko IEventBus-a kada se kreira novi nalog. ObavestenjeHandler (Obavestenja modul) se pretplacuje na taj dogadjaj i belezi obavestenje, bez direktne zavisnosti od Nalozi modula.
 
 ## Pokretanje
 
