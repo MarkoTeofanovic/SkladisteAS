@@ -12,7 +12,7 @@ Aplikacija je podeljena u module:
 - Skladiste.Korisnici - Korisnik, IKorisnikRepository, AutentifikacijaService
 - Skladiste.Nalozi - Nalog, StavkaNaloga, INalogRepository, NalogService (kreiranje naloga sa stavkama - kalkulacija i azuriranje stanja)
 - Skladiste.Obavestenja - IObavestenjeSlanje, ObavestenjeHandler (reaguje na dogadjaj iz Nalozi modula)
-- Skladiste.Infrastructure - adapteri za sve portove (JSON repozitorijumi, InMemoryEventBus, KonzolnoObavestenjeSlanje)
+- Skladiste.Infrastructure - adapteri za sve portove (JSON repozitorijumi, InMemoryEventBus, PopupObavestenjeSlanje)
 - Skladiste.UI - WPF kompozicioni koren (DI, ViewModeli, Views)
 - Skladiste.Tests - jedinicni testovi nad aplikacionim slojem
 

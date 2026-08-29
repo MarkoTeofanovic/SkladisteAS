@@ -54,7 +54,7 @@ public partial class App : Application
         servisi.AddSingleton<IKategorijaRepository, KategorijaJsonRepository>();
         servisi.AddSingleton<IKorisnikRepository, KorisnikJsonRepository>();
         servisi.AddSingleton<INalogRepository, NalogJsonRepository>();
-        servisi.AddSingleton<IObavestenjeSlanje, KonzolnoObavestenjeSlanje>();
+        servisi.AddSingleton<IObavestenjeSlanje, PopupObavestenjeSlanje>();
 
         servisi.AddSingleton<ProizvodService>();
         servisi.AddSingleton<KategorijaService>();

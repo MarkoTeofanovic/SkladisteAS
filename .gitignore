@@ -3,3 +3,4 @@ obj/
 *.user
 .vs/
 docs/plantuml.jar
+.~lock.*#
