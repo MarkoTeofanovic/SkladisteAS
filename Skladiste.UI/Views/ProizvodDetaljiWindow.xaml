@@ -1,0 +1,28 @@
+<Window x:Class="Skladiste.UI.Views.ProizvodDetaljiWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Proizvod" Height="380" Width="320"
+        WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <StackPanel Margin="12">
+        <TextBlock Text="Naziv"/>
+        <TextBox Text="{Binding Naziv, UpdateSourceTrigger=PropertyChanged}" Margin="0,2,0,10"/>
+
+        <TextBlock Text="Sifra"/>
+        <TextBox Text="{Binding Sifra, UpdateSourceTrigger=PropertyChanged}" Margin="0,2,0,10"/>
+
+        <TextBlock Text="Cena"/>
+        <TextBox Text="{Binding Cena, UpdateSourceTrigger=PropertyChanged}" Margin="0,2,0,10"/>
+
+        <TextBlock Text="Kolicina na stanju"/>
+        <TextBox Text="{Binding KolicinaNaStanju, UpdateSourceTrigger=PropertyChanged}" Margin="0,2,0,10"/>
+
+        <TextBlock Text="Kategorija"/>
+        <ComboBox ItemsSource="{Binding Kategorije}" DisplayMemberPath="Naziv"
+                  SelectedItem="{Binding IzabranaKategorija}" Margin="0,2,0,16"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Otkazi" Width="80" Margin="0,0,8,0" Command="{Binding OtkaziCommand}"/>
+            <Button Content="Sacuvaj" Width="80" Command="{Binding SacuvajCommand}"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

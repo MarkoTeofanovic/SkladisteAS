@@ -1,0 +1,26 @@
+<UserControl x:Class="Skladiste.UI.Views.ProizvodListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,8">
+            <Button Content="Dodaj" Width="80" Margin="4,0,0,0" Command="{Binding DodajCommand}"/>
+            <Button Content="Izmeni" Width="80" Margin="4,0,0,0" Command="{Binding IzmeniCommand}"/>
+            <Button Content="Obrisi" Width="80" Margin="4,0,0,0" Command="{Binding ObrisiCommand}"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" ItemsSource="{Binding Proizvodi}" SelectedItem="{Binding Izabran}"
+                  AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Naziv" Binding="{Binding Naziv}" Width="*"/>
+                <DataGridTextColumn Header="Sifra" Binding="{Binding Sifra}" Width="100"/>
+                <DataGridTextColumn Header="Cena" Binding="{Binding Cena}" Width="80"/>
+                <DataGridTextColumn Header="Kolicina" Binding="{Binding KolicinaNaStanju}" Width="80"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
