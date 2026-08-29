@@ -1,0 +1,20 @@
+@startuml c4-container
+skinparam rectangle {
+  BackgroundColor<<person>> #08427B
+  FontColor<<person>> white
+  BackgroundColor<<container>> #438DD5
+  FontColor<<container>> white
+  BackgroundColor<<db>> #438DD5
+  FontColor<<db>> white
+}
+
+rectangle "Korisnik" <<person>> as korisnik
+
+rectangle "Sistem za upravljanje skladistem" {
+  rectangle "WPF Desktop Aplikacija\n[.NET 8, WPF]" <<container>> as ui
+  rectangle "JSON datoteke\n[lokalna perzistencija]" <<db>> as baza
+}
+
+korisnik --> ui : koristi
+ui --> baza : cita / upisuje\n(proizvodi.json, kategorije.json,\nkorisnici.json, nalozi.json)
+@enduml

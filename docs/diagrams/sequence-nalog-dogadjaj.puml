@@ -1,0 +1,23 @@
+@startuml sequence-nalog-dogadjaj
+actor Korisnik
+participant "NalogDetaljiWindow" as View
+participant "NalogService" as Nalozi
+participant "ProizvodService" as Proizvodi
+participant "IEventBus" as EventBus
+participant "ObavestenjeHandler" as Obavestenja
+
+Korisnik -> View : unosi broj naloga i stavke, klik "Sacuvaj"
+View -> Nalozi : KreirajNalog(brojNaloga, korisnikId, stavke)
+
+loop za svaku stavku
+  Nalozi -> Proizvodi : AzurirajKolicinu(proizvodId, kolicina)
+end
+
+Nalozi -> Nalozi : izracunaj UkupnuVrednost
+Nalozi -> EventBus : Publish(NalogKreiranEvent)
+EventBus -> Obavestenja : pretplatnik pozvan
+Obavestenja -> Obavestenja : Posalji(poruka) preko IObavestenjeSlanje
+
+Nalozi --> View : nalog kreiran
+View --> Korisnik : prikaz azuriranog spiska naloga
+@enduml

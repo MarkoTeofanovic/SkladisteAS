@@ -1,0 +1,27 @@
+@startuml c4-component
+skinparam rectangle {
+  BackgroundColor<<component>> #85BBF0
+  FontColor<<component>> black
+}
+
+rectangle "WPF Desktop Aplikacija" {
+  rectangle "Proizvodi\n[modul]" <<component>> as proizvodi
+  rectangle "Kategorije\n[modul]" <<component>> as kategorije
+  rectangle "Korisnici\n[modul]" <<component>> as korisnici
+  rectangle "Nalozi\n[modul]" <<component>> as nalozi
+  rectangle "Obavestenja\n[modul]" <<component>> as obavestenja
+  rectangle "Infrastructure\n[adapteri]" <<component>> as infra
+  rectangle "SharedKernel\n[zajednicki domen]" <<component>> as shared
+}
+
+nalozi --> proizvodi : azurira stanje
+nalozi --> shared : objavljuje dogadjaj
+obavestenja --> shared : pretplacuje se
+
+infra --> proizvodi
+infra --> kategorije
+infra --> korisnici
+infra --> nalozi
+infra --> obavestenja
+infra --> shared
+@enduml

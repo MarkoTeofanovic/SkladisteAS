@@ -1,0 +1,37 @@
+@startuml dijagram-modula
+package "Skladiste.UI" as UI
+package "Skladiste.Infrastructure" as Infra
+package "Skladiste.Proizvodi" as Proizvodi
+package "Skladiste.Kategorije" as Kategorije
+package "Skladiste.Korisnici" as Korisnici
+package "Skladiste.Nalozi" as Nalozi
+package "Skladiste.Obavestenja" as Obavestenja
+package "Skladiste.SharedKernel" as SharedKernel
+package "Skladiste.Tests" as Tests
+
+UI --> Proizvodi
+UI --> Kategorije
+UI --> Korisnici
+UI --> Nalozi
+UI --> Obavestenja
+UI --> Infra
+UI --> SharedKernel
+
+Infra --> Proizvodi
+Infra --> Kategorije
+Infra --> Korisnici
+Infra --> Nalozi
+Infra --> Obavestenja
+Infra --> SharedKernel
+
+Nalozi --> Proizvodi
+Nalozi --> SharedKernel
+Obavestenja --> SharedKernel
+
+Tests --> Proizvodi
+Tests --> Kategorije
+Tests --> Korisnici
+Tests --> Nalozi
+Tests --> Obavestenja
+Tests --> SharedKernel
+@enduml

@@ -1,0 +1,13 @@
+@startuml c4-context
+skinparam rectangle {
+  BackgroundColor<<person>> #08427B
+  FontColor<<person>> white
+  BackgroundColor<<system>> #1168BD
+  FontColor<<system>> white
+}
+
+rectangle "Korisnik\n(Administrator / Magacioner)" <<person>> as korisnik
+rectangle "Sistem za upravljanje skladistem\n[Modularni monolit]" <<system>> as sistem
+
+korisnik --> sistem : koristi\n(prijava, proizvodi, kategorije, nalozi)
+@enduml
